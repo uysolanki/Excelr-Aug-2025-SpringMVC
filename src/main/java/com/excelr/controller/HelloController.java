@@ -1,5 +1,9 @@
 package com.excelr.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -77,6 +81,22 @@ public class HelloController {
 		}
 	
 		
+		return mav;
+	}
+	
+	@RequestMapping("/playerList")
+	public ModelAndView playerList()
+	{
+		Player p1=new Player(7,"Dhoni",100,10000);
+		Player p2=new Player(33,"Shubman",10,1000);
+		Player p3=new Player(69,"Surya",20,2000);
+		Player p4=new Player(18,"Virat",70,7000);
+		Player p5=new Player(45,"Rohit",50,5000);
+		
+		List<Player> team=new ArrayList(Arrays.asList(p1,p2,p3,p4,p5));
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("india");
+		mav.addObject("players",team);
 		return mav;
 	}
 }
