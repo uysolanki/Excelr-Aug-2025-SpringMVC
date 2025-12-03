@@ -7,6 +7,8 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -97,6 +99,28 @@ public class HelloController {
 		ModelAndView mav=new ModelAndView();
 		mav.setViewName("india");
 		mav.addObject("players",team);
+		return mav;
+	}
+	
+	@RequestMapping("/addNewPlayerForm")
+	public ModelAndView addNewPlayerForm()
+	{
+		Player p1=new Player();		//jno=0, pname=null mp=0 rs=0
+		
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("add-player-form");
+		mav.addObject("player",p1);
+		return mav;
+	}
+	
+	@PostMapping("/addPlayer")
+	public ModelAndView addPlayer(@ModelAttribute Player player)
+	{
+		System.out.println(player);
+		
+		ModelAndView mav=new ModelAndView();
+		mav.setViewName("confirm");
+		mav.addObject("player",player);
 		return mav;
 	}
 }
