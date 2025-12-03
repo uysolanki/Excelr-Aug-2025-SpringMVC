@@ -8,9 +8,9 @@
 </head>
 <body>
 <h1> Player Stats</h1>
-<p> Jersey Number : ${player.jno} </p>
-<p> Player Name :  ${player.pname} </p>
-<p> Matches Played :  ${player.mp} </p>
-<p> Runs Scored :  ${player.rs}</p>
+<p> Jersey Number : ${captain.jno} </p>
+<p> Player Name :  ${captain.pname} </p>
+<p> Matches Played :  ${captain.mp} </p>
+<p> Runs Scored :  ${captain.rs}</p>
 </body>
 </html>

@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1> Player Stats</h1>
-<p> Jersey Number : ${player.jno} </p>
-<p> Player Name :  ${player.pname} </p>
-<p> Matches Played :  ${player.mp} </p>
-<p> Runs Scored :  ${player.rs}</p>
+<h1>${message}</h1>
 </body>
 </html>
